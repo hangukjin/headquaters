@@ -2,4 +2,3 @@ Flask
 Redis
 kafka-python
 flask_restful
-json
