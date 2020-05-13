@@ -12,12 +12,8 @@ api = Api(app)
 class Sales(Resource):
 
     def post(self):
-        db = redis.Redis('localhost')
 
-        json_dict = json.dumps(request.json, ensure_ascii=False).encode('utf-8')
-        db.set(request.json["cafeId"], json_dict)
-
-        #db.set("cafeId", request.json["salesSum"])
+        print(request.json)
 
         if random.random() > 0.5:
             return True
