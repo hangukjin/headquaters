@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: headquaters
+  labels:
+    app: headquaters
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: headquaters
+  template:
+    metadata:
+      labels:
+        app: headquaters
+    spec:
+      containers:
+        - name: command-handler
+          image: username/customer-command-handler:latest
+          ports:
+            - containerPort: 8086
