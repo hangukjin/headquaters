@@ -9,14 +9,23 @@ resources:
 - repo: self
 
 variables:
+- group: common-value
+  # containerRegistry: 'event.azurecr.io'
+  # containerRegistryDockerConnection: 'acr'
+  # environment: 'aks.default'
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'dfe2464d-3a6e-4279-8ee6-1afc278fca76'
-  imageRepository: 'hangukjinheadquaters'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile.command.handler'
-  tag: '$(Build.BuildId)'
+- name: dockerRegistryServiceConnection
+  value: 'dfe2464d-3a6e-4279-8ee6-1afc278fca76'
+- name: imageRepository
+  value: 'headquaters'
+- name: dockerfilePath
+  value: '**/Dockerfile'
+- name: tag
+  value: '$(Build.BuildId)'
   
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+- name: vmImageName
+  value: 'ubuntu-latest'
 
 stages:
 - stage: Build
