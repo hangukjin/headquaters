@@ -14,8 +14,6 @@ variables:
   # containerRegistryDockerConnection: 'acr'
   # environment: 'aks.default'
   # Container registry service connection established during pipeline creation
-- name: dockerRegistryServiceConnection
-  value: 'dfe2464d-3a6e-4279-8ee6-1afc278fca76'
 - name: imageRepository
   value: 'headquaters'
 - name: dockerfilePath
